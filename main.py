@@ -51,9 +51,13 @@ with dataset :
     tf = pd.read_csv("data/test_set.csv")
     tf.drop("Loan_ID", axis=1, inplace=True)
 
-    st.write("This is our raw dataset")
+    st.write("This is our raw training dataset")
     st.write(df)
     st.write("Shape of the dataset", df.shape)
+    
+    st.write("This is our raw test set")
+    st.write(tf)
+    st.write("Shape of the dataset", tf.shape)
 
 
 with visualisation:
@@ -289,7 +293,7 @@ with user_model:
     clf.fit(X_train, y_train)
     y_pred=clf.predict(X_test)
 
-    st.header(f"Model training using the choosen classifier - {classifier_name}")
+    st.header(f"Model training using the chosen classifier - {classifier_name}")
     st.write(f"Accuracy of your model: {accuracy_score(y_test,y_pred)}")
     st.write(f" F1 score of your model: {f1_score(y_test, y_pred)}")
     st.write("Validation Mean Accuracy: ", cross_val_score(clf, X_test, y_test, cv=5, scoring='accuracy').mean())
@@ -299,7 +303,7 @@ with user_model:
     a = pd.DataFrame(y_pred1)
     a.replace({1: "Y", 0: "N"}, inplace=True)
     a.rename(columns={a.columns[0]: "Predicted Values"})
-    st.subheader("Predicted Loan_Status using the choosen classifier")
+    st.subheader("Predicted Loan_Status using the chosen classifier")
     st.write(a)
 
 
