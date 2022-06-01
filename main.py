@@ -38,8 +38,8 @@ with descpriton:
     st.header("Loan Amount Prediction")
     st.write("This is a Binary Classification problem in which we need to predict our Target label which is “Loan Status”")
     st.write("Loan status can have two values: Yes or NO.")
-    st.write("Yes: if the loan is approved heloo")
-    st.write("NO: if the loan is not approved\n")
+    st.write("Yes: if the loan is approved")
+    st.write("NO: if the loan is not approved")
     st.write("So using the training dataset we will train our model and try to predict our target column that is “Loan Status” on the test dataset.")
 
 with dataset :
